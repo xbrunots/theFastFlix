@@ -25,6 +25,7 @@ public class HomeContract {
 
         Genres getGenres();
 
+        void closeGenresDrawer();
         void hideGenreTitle();
 
         void setGenreTitle(String name);
@@ -32,7 +33,6 @@ public class HomeContract {
 
     interface Presenter extends BasePresenter {
         void getMovies();
-
         void getGenresDrawer();
 
         MoviesStoriesAdapter getMovieStoriesAdapter();

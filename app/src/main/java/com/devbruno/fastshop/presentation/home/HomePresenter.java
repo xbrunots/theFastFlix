@@ -5,11 +5,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.animation.AnimationUtils;
 
 import com.devbruno.fastshop.R;
+import com.devbruno.fastshop.infraestruture.Constants;
 import com.devbruno.fastshop.infraestruture.Repository.ApiClient;
 import com.devbruno.fastshop.infraestruture.Repository.ApiInterface;
-import com.devbruno.fastshop.infraestruture.Constants;
 import com.devbruno.fastshop.model.Movie;
 import com.devbruno.fastshop.model.MoviesResponse;
 import com.devbruno.fastshop.presentation.genres.GenresFragment;
@@ -68,7 +69,13 @@ public class HomePresenter implements HomeContract.Presenter {
 
     public void getGenresDrawer() {
         mActivity.initFragment(new GenresFragment(), Constants.GENRES_NAME, mActivity);
+        mView.getRecyclerView().clearAnimation();
+        mView.getRecyclerViewEstories().clearAnimation();
+        mView.getRecyclerView().startAnimation(AnimationUtils.loadAnimation(mView.getRecyclerView().getContext(), R.anim.move_all_r));
+        mView.getRecyclerViewEstories().startAnimation(AnimationUtils.loadAnimation(mView.getRecyclerViewEstories().getContext(), R.anim.move_all_r));
     }
+
+
 
     @Override
     public void getMovies() {
@@ -104,7 +111,7 @@ public class HomePresenter implements HomeContract.Presenter {
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
                 Log.e(Constants.TAG_GENERIC, response.raw().toString());
                 int statusCode = response.code();
-                if(statusCode==200 && isOnline(mContext)){
+                if (statusCode == 200 && isOnline(mContext)) {
                     movies = response.body().getResults();
                     defaultList = new ArrayList<>();
                     defaultList.addAll(movies);
@@ -115,7 +122,7 @@ public class HomePresenter implements HomeContract.Presenter {
 
                     moviesAdapter.notifyDataSetChanged();
                     moviesAdapterStories.notifyDataSetChanged();
-                }else{
+                } else {
                     mView.alertErroApi();
                 }
                 mView.hideLoading();

@@ -1,15 +1,12 @@
 package com.devbruno.fastshop.presentation.genres;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,10 +15,9 @@ import android.widget.Toast;
 import com.devbruno.fastshop.R;
 import com.devbruno.fastshop.infraestruture.AccountUtils;
 import com.devbruno.fastshop.infraestruture.Constants;
-import com.devbruno.fastshop.presentation.BaseActivity;
 import com.devbruno.fastshop.presentation.BaseFragment;
 import com.devbruno.fastshop.presentation.home.HomeActivity;
-import com.devbruno.fastshop.presentation.home.HomeContract;
+import com.devbruno.fastshop.presentation.home.HomeFragment;
 
 /**
  * Created by bsilvabr on 12/02/2018.
@@ -71,6 +67,7 @@ public class GenresFragment extends BaseFragment implements GenresContract.View 
                 case R.id.imageButton:
                 case R.id.laymain:
                     getActivity().onBackPressed();
+                    HomeFragment.getHomeFragment().closeGenresDrawer();
                     break;
                 default:
                     return;
