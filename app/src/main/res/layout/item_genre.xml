@@ -21,7 +21,7 @@
         android:foreground="?attr/selectableItemBackground"
         android:paddingLeft="25dp"
         android:text="TextView"
-        android:textAlignment="viewStart"
+        android:textAlignment="textStart"
         android:textColor="@color/colorC"
         android:textSize="14sp" />
 </LinearLayout>
