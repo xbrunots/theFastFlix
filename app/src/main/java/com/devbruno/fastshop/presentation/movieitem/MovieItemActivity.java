@@ -1,4 +1,4 @@
-package com.devbruno.fastshop.presentation.models;
+package com.devbruno.fastshop.presentation.movieitem;
 
 import android.annotation.TargetApi;
 import android.os.Build;

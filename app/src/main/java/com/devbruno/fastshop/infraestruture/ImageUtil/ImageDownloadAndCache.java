@@ -83,8 +83,6 @@ public class ImageDownloadAndCache {
         }
 
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            // This database is only a cache for online data, so its upgrade policy is
-            // to simply to discard the data and start over
             db.execSQL(Constants.SQL_DELETE_ENTRIES);
             onCreate(db);
         }
@@ -123,12 +121,12 @@ public class ImageDownloadAndCache {
             String sortOrder = "key DESC";
 
             return db.query(
-                    "bitmaps",  // The table to query
-                    projection,                               // The columns to return
-                    "key = ?",                                // The columns for the WHERE clause
-                    new String[]{key},                            // The values for the WHERE clause
-                    null,                                     // don't group the rows
-                    null,                                     // don't filter by row groups
+                    "bitmaps",                           // The table to query
+                    projection,                                // The columns to return
+                    "key = ?",                        // The columns for the WHERE clause
+                    new String[]{key},                         // The values for the WHERE clause
+                    null,                             // don't group the rows
+                    null,                              // don't filter by row groups
                     sortOrder                                 // The sort order
             );
         }

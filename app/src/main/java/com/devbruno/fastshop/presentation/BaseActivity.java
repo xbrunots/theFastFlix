@@ -11,8 +11,8 @@ import com.devbruno.fastshop.presentation.genres.GenresPresenter;
 import com.devbruno.fastshop.presentation.home.HomeActivity;
 import com.devbruno.fastshop.presentation.home.HomeContract;
 import com.devbruno.fastshop.presentation.home.HomePresenter;
-import com.devbruno.fastshop.presentation.models.MovieItemContract;
-import com.devbruno.fastshop.presentation.models.MovieItemPresenter;
+import com.devbruno.fastshop.presentation.movieitem.MovieItemContract;
+import com.devbruno.fastshop.presentation.movieitem.MovieItemPresenter;
 
 /**
  * Created by bsilvabr on 10/02/2018.

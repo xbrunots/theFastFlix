@@ -24,7 +24,7 @@ import com.devbruno.fastshop.infraestruture.ImageUtil.ImageDownloadAndCache;
 import com.devbruno.fastshop.model.Movie;
 import com.devbruno.fastshop.R;
 import com.devbruno.fastshop.presentation.home.HomeActivity;
-import com.devbruno.fastshop.presentation.models.MovieItemActivity;
+import com.devbruno.fastshop.presentation.movieitem.MovieItemActivity;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
 

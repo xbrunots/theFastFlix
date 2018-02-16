@@ -38,7 +38,6 @@ public class ApiTest {
                 int statusCode = response.code();
                 assertEquals(statusCode, 200);
             }
-
             @Override
             public void onFailure(Call<MoviesResponse> call, Throwable t) {
                 // Log error here since request failed

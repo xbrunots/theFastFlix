@@ -1,4 +1,4 @@
-package com.devbruno.fastshop.presentation.models;
+package com.devbruno.fastshop.presentation.movieitem;
 
 import android.content.Context;
 import android.content.Intent;
